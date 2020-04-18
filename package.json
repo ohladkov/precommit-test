@@ -1,0 +1,36 @@
+{
+  "name": "precommit-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prettier": "prettier --write ./src/**/*.{js,css}"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "./src/**/*.{js,css}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ohladkov/precommit-test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ohladkov/precommit-test/issues"
+  },
+  "homepage": "https://github.com/ohladkov/precommit-test#readme",
+  "devDependencies": {
+    "husky": "^4.2.5",
+    "lint-staged": "^10.1.5",
+    "prettier": "^2.0.4"
+  }
+}
